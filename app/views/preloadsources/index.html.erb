@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Preloadsources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Preloadsourcename</th>
+      <th>Preloadsourceurl</th>
+      <th>Language</th>
+      <th>Sourcetype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preloadsources.each do |preloadsource| %>
+      <tr>
+        <td><%= preloadsource.preloadsourcename %></td>
+        <td><%= preloadsource.preloadsourceurl %></td>
+        <td><%= preloadsource.language_id %></td>
+        <td><%= preloadsource.sourcetype_id %></td>
+        <td><%= link_to 'Show', preloadsource %></td>
+        <td><%= link_to 'Edit', edit_preloadsource_path(preloadsource) %></td>
+        <td><%= link_to 'Destroy', preloadsource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preloadsource', new_preloadsource_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sourcetypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sourcetype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sourcetypes.each do |sourcetype| %>
+      <tr>
+        <td><%= sourcetype.sourcetype %></td>
+        <td><%= link_to 'Show', sourcetype %></td>
+        <td><%= link_to 'Edit', edit_sourcetype_path(sourcetype) %></td>
+        <td><%= link_to 'Destroy', sourcetype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sourcetype', new_sourcetype_path %>
