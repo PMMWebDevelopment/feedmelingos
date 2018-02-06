@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180205104549) do
+ActiveRecord::Schema.define(version: 20180206120425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180205104549) do
     t.string "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "flagurl"
   end
 
   create_table "preloadsources", force: :cascade do |t|
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20180205104549) do
     t.integer "sourcetype_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "defaultbool", default: true
   end
 
   create_table "sourcetypes", force: :cascade do |t|

@@ -1,9 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Language:</strong>
-  <%= @language.language %>
-</p>
+<div class="container">
+  <div class="row">
+    <div id="languageShowHeader">
+    <h1><%= @language.language %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to 'Back', root_path %>
+  </div>
+  <div class="row">
+    <div class="twitter-feed col-xs-3">
+      <div class="tfplaceholder">
+        <h5>Put a twitter feed here.</h5>
+      </div>
+    </div>
+    <div class="twitter-feed col-xs-3">
+      <div class="tfplaceholder">
+        <h5>Put a twitter feed here.</h5>
+      </div>
+    </div>
+    <div class="twitter-feed col-xs-3">
+      <div class="tfplaceholder">
+        <h5>Put a twitter feed here.</h5>
+      </div>
+    </div>
+    <div class="twitter-feed col-xs-3">
+      <div class="otherfeedsavailable">
+        <h5>List of other twitter feeds available.</h5>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_language_path(@language) %> |
-<%= link_to 'Back', languages_path %>

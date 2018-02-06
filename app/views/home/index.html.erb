@@ -15,14 +15,9 @@
         <div class="row">
             <div id="clickflagprompt" class="col-xs-2">Click on a flag >></div>
             <div id="frontPageFlags" class="col-xs-8">
-                <span><%= image_tag "cn.png", :class => "flag" %></span>
-                <span><%= image_tag "de.png", :class => "flag"  %></span>
-                <span><%= image_tag "es.png", :class => "flag"  %></span>
-                <span><%= image_tag "fr.png", :class => "flag"  %></span>
-                <span><%= image_tag "it.png", :class => "flag"  %></span>
-                <span><%= image_tag "jp.png", :class => "flag"  %></span>
-                <span><%= image_tag "pt.png", :class => "flag"  %></span>
-                <span><%= image_tag "ru.png", :class => "flag"  %></span>
+                <% Language.find_each do |language| %>
+                <span><%= link_to image_tag("#{language.flagurl}", class: "flag"), language_path(language.id) %></span>
+                <% end %>
             </div>
         </div>
         <div class="row">
