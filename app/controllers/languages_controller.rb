@@ -10,6 +10,9 @@ class LanguagesController < ApplicationController
   # GET /languages/1
   # GET /languages/1.json
   def show
+    @allfeeds = Preloadsource.where(language: @language)
+    @selectedfeeds = @allfeeds.where(defaultbool: true)
+    @otherfeedsavailable = @allfeeds.where(defaultbool: false)
   end
 
   # GET /languages/new
@@ -35,6 +38,11 @@ class LanguagesController < ApplicationController
         format.json { render json: @language.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def feeds
+  #   respond_to do |format|
+  #   @selectedfeeds = 
   end
 
   # PATCH/PUT /languages/1
