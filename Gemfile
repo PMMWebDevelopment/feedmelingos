@@ -13,8 +13,12 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
+# User authentication
 gem 'activeadmin'
 gem 'devise'
+
+# Restrict what resources users can change
+gem 'cancancan', '~> 2.0'
 
 #jquery
 gem 'jquery-rails'

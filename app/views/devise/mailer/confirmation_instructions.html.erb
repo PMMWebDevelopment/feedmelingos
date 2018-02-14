@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="signuploginTitle">
+        <p>Welcome <%= @email %>!</p>
+
+        <p>You can confirm your account email through the link below:</p>
+    </div>
+
+    <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>

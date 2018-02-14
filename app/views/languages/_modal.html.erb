@@ -1,12 +1,16 @@
 <div class="form-check">
     <%= form_tag({controller: "languages", action: "show"}, method: "get") do %>
-    <% @allfeeds.each do |feed|%>
-        <% if feed.defaultbool %>
-        <p><%= check_box_tag 'feed_ids[]', feed.id, true, class: 'form-check-input' %><%= label_tag feed.preloadsourcename, feed.preloadsourcename, class: 'form-check-label'%></p>
-        <% else %>
-        <p><%= check_box_tag 'feed_ids[]', feed.id, false, class: 'form-check-input' %><%= label_tag feed.preloadsourcename, feed.preloadsourcename, class: 'form-check-label'%></p>
+        <% @allfeeds.each do |feed|%>
+            <% if @selectedfeeds.include?(feed) %>
+            <p><%= check_box_tag 'feed_ids[]', feed.id, true, class: 'form-check-input' %><%= label_tag feed.preloadsourcename, feed.preloadsourcename, class: 'form-check-label'%></p>
+            <% else %>
+            <p><%= check_box_tag 'feed_ids[]', feed.id, false, class: 'form-check-input' %><%= label_tag feed.preloadsourcename, feed.preloadsourcename, class: 'form-check-label'%></p>
+            <% end %>
         <% end %>
-    <% end %>
-    <%= submit_tag 'Load chosen feeds', class: 'btn btn-primary'%>
+        <% if current_user %>
+            <%= submit_tag 'Load page with saved feeds', class: 'btn btn-primary'%>
+        <% else%>
+            <%= submit_tag 'Load chosen feeds', class: 'btn btn-primary'%>
+        <% end %>
     <% end %>
 </div>

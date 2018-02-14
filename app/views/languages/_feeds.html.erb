@@ -1,10 +1,10 @@
 <div id="twitterRow" class="row no-gutter">
     <div class="col-md-10">
-      <% @selectedfeeds.each do |selectedfeed|%>
-        <div class="twitterfeeds">
-          <a class="twitter-timeline" href="https://twitter.com/<%= selectedfeed.preloadsourceurl %>?ref_src=twsrc%5Etfw" data-width="320" data-height="520" data-chrome="nofooter">Tweets by <%= selectedfeed.preloadsourcename %></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      <% end %>
+        <% @selectedfeeds.each do |selectedfeed|%>
+          <div class="twitterfeeds">
+            <a class="twitter-timeline" href="https://twitter.com/<%= selectedfeed.preloadsourceurl %>?ref_src=twsrc%5Etfw" data-width="320" data-height="520" data-chrome="nofooter">Tweets by <%= selectedfeed.preloadsourcename %></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        <% end %>
     </div>
     <div class="col-md-2">
       <div class="otherfeedsavailable">

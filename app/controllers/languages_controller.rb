@@ -1,5 +1,6 @@
 class LanguagesController < ApplicationController
   before_action :set_language, only: [:show, :edit, :update, :destroy, :feeds]
+  before_action :authenticate_user!
   
   # GET /languages
   # GET /languages.json
@@ -12,14 +13,31 @@ class LanguagesController < ApplicationController
   def show
     @allfeeds = Preloadsource.where(language: @language)
     @submittagresults = params[:feed_ids]
-    if !@submittagresults
+    @selectedfeeds = @allfeeds.where(defaultbool: true)
+    @otherfeedsavailable = @allfeeds.where(defaultbool: false)
+    if current_user
+      # Does user have any existing subs?
+      @usersubscriptions = Subscription.where(user_id: current_user.id, language_id: @language)
+      if !@usersubscriptions 
+        if @submittagresults
+          @submittagresults.each do |submittagresult|
+            if !Subscription.where(user_id: current_user.id, preloadsource_id: submittagresult)  
+              Subscription.create(user_id: current_user.id, preloadsource_id: submittagresult, language_id: @language, preloadsourcename: @allfeeds.where(id: preloadsource_id).preloadsourcename, preloadsourceurl: @allfeeds.where(id: preloadsource_id).preloadsourceurl)
+            end
+          end
+        end
+      end
+      @usersubIDs = []
+      @usersubscriptions.each do |i|
+        @usersubIDs.push(i.preloadsource_id)
+      end
+      @selectedfeeds = @allfeeds.where(id: @usersubIDs)
+      @otherfieldsavailable = @allfeeds - @selectedfeeds
+    else
       @selectedfeeds = @allfeeds.where(defaultbool: true)
       @otherfeedsavailable = @allfeeds.where(defaultbool: false)
-    else
-      @selectedfeeds = @allfeeds.where(id: @submittagresults)
-      @otherfeedsavailable = @allfeeds.where.not(id: @submittagresults)
     end
-  end 
+  end
 
   # GET /languages/new
   def new
@@ -81,4 +99,4 @@ class LanguagesController < ApplicationController
       params.permit(:language)
     end
 
-  end
+end
