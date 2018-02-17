@@ -1,21 +1,35 @@
-<p id="backlink"><%= link_to 'Back', root_path %></p>
-
-<div class="container-fluid">
+<div id="languagePageTopBar" class="container">
   <div class="row">
-    <div class="col-md-4" id="languageShowHeader">
-    <h1 ><%= @language.language %></h1>
+    <div class="col-md-2">
+      <p id="backlink"><%= link_to 'Home', root_path %>
     </div>
-      <!-- Button trigger modal -->
-    <div id="options" class="col-md-8">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeFeedsModal">Review / change Twitter feeds on this page</button>
-      
-
+    <div class="col-md-6" id="languagePageFlags">
+      <% @thisLanguage = Language.find(params[:id]) %>
+      <% @otherLanguages = Language.where.not(id: @language. id)%>
+      <% @otherLanguages.each do |language| %>
+      <span><%= link_to image_tag("#{language.flagurl}", class: "languagePageFlag"), language_path(language.id) %></span>
+      <% end %> 
     </div>
   </div>
-  <%= render partial: 'feeds' %>
 </div>
 
-<!-- Modal -->
+
+<div id="languageShowTopContainer" class="container">
+  <div class="row">
+    <div class="col-md-6" id="languageShowHeader">
+    <h1>FeedMeLingos::<b><%= @language.language %></b></h1>
+    </div>
+      <!-- Button trigger modal -->
+    <div id="options" class="col-md-4">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeFeedsModal">Review / change Twitter feeds on this page</button>
+    </div>
+  </div>
+</div>
+
+<div id="twitterRow" class="container">  
+  <%= render partial: 'feeds' %>
+</div>
+<!-- Modal Skeleton - Modal body stored in a partial file -->
 <div class="modal fade" id="changeFeedsModal" tabindex="-1" role="dialog" aria-labelledby="changeFeedsModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -27,7 +41,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= render partial: 'modal'%>
+        <%= render partial: 'modal' %>
       </div>
     </div>
   </div>

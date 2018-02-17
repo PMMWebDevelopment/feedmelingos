@@ -1,14 +1,24 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamesed')
+@import url('https://fonts.googleapis.com/css?family=Montserrat')
 
 body 
     background: image-url('backgroundimageearth.jpg') center center fixed
     background-size: cover
     font-family: 'Montserrat', sans-serif
 
+#applicationHTMLHeader
+    margin: 5px
+
 #loginStatus
+    padding-top: 0px
     color: white
+
+.twitterFollowButton
+    height: 50px
+    color: white
+    padding-top: 5px
+    padding-left: 5px
 
 #frontPage
     position: relative
@@ -34,8 +44,7 @@ body
     color: white
     text-align: center
     
-#frontPageFlags,
-#frontPageButtons
+#frontPageFlags
     margin-bottom: 50px
     display: table
     text-align: center
@@ -49,6 +58,7 @@ body
     border: 2px solid
     border-color: rgba(255, 255, 255, 0)
     animation: none
+    text-align: center
     
 @keyframes blink
     0%
@@ -60,52 +70,88 @@ body
         
 #frontPageFlags span
     display: table-cell
-    
+
+#frontPageButton
+    margin-bottom: 45px
+
+#memberClickPrompt
+    color: white
+
 .flag
     width: 80px
     height: 60px
     padding: 5px
     
-#frontPageButtons span
-    margin-left: 10px
-    margin-right: 10px
-    margin-bottom: 10px
+#backlink
+    margin-top: 0
+    margin-left: 0
+    margin-bottom: 0
 
-#notice
-    margin-top: 10px
-    margin-left: 10px
+#languagePageTopBar
+    margin-left: 5px
+    margin-top: 0
+    padding: 0
+
+.languagePageFlags
+    text-align: center
+
+.languagePageFlag
+    width: 60px
+    height: 40px
+
+#languageShowTopContainer
+    line-height: 40px
+    height: 40px
 
 #languageShowHeader
-    padding-left: 20px
+    padding-left: 0
+    padding-bottom: 0
+    padding-top: 0
+    margin-top: 0
     color: white
+    text-align: left
 
 #languageShowHeader h1
     font-weight: bold
 
 #options
     color: white
-    padding-left: 0
-
-#backlink
-    margin-left: 10px
+    padding-left: 0px
+    padding-top: 0
+    margin-top: 0
+    padding-bottom: 0
+    margin-bottom: 0
 
 #twitterRow
-    max-height: 480px
+    padding-left: 5px
+    padding-top: 0
+    margin-left: 5px
+    margin-top: 5px
+    margin-right: 10px 
+    float: left
+    text-align: left
+    max-height: 400px
+    width: 95%
 
 .twitterfeeds
     float: left
     margin-left: 5px
+    margin-right: 5px
 
 .otherfeedsavailable
     color: white
+    padding-left: 0
+    margin-left: 0
 
 .form-check-label
     margin-left: 5px
 
 .footer 
-    position: absolute
+    position: relative
+    top: 5px
     bottom: 0px
     color: white
+    text-align: center
 
 .signuploginTitle,
 .field label,

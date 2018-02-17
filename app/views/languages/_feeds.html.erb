@@ -1,17 +1,25 @@
-<div id="twitterRow" class="row no-gutter">
+<div class="row">
     <div class="col-md-10">
         <% @selectedfeeds.each do |selectedfeed|%>
           <div class="twitterfeeds">
-            <a class="twitter-timeline" href="https://twitter.com/<%= selectedfeed.preloadsourceurl %>?ref_src=twsrc%5Etfw" data-width="320" data-height="520" data-chrome="nofooter">Tweets by <%= selectedfeed.preloadsourcename %></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a class="twitter-timeline" href="https://twitter.com/<%= selectedfeed.preloadsourceurl %>?ref_src=twsrc%5Etfw" data-width="325" data-height="415" data-chrome="nofooter">Tweets by <%= selectedfeed.preloadsourcename %></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
         <% end %>
     </div>
     <div class="col-md-2">
       <div class="otherfeedsavailable">
-        <h4>List of other twitter feeds available: -</h4>
+        <h4>List of other Twitter feeds available: -</h4>
           <% @otherfeedsavailable.each do |otheravailablefeed|%>
             <p><%= otheravailablefeed.preloadsourcename %></p>
           <% end %>
       </div>
     </div>
 </div>
+<!-- FOOTER -->
+    <!-- NB: always present! -->
+    <div class="footer">
+        <div class="container">
+            <p>Website design &copy; PMM Web Development. Live sources credited as used on site. This site is intended as a free educational aid.</p>
+        </div>
+    </div>
+<!-- End of Footer -->

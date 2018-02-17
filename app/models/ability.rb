@@ -2,9 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, :all # permissions assigned to every user, even when not logged in    
+    user ||= User.new
+    can :read, Preloadsource
     if user.present?  # additional permissions assigned to logged in users (they can manage their posts)
-      can :manage, Subscription, user_id: user.id 
+      can :manage, Subscription, :user_id => user.id 
     end
   end
 end

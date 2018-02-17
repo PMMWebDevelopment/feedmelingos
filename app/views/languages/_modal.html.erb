@@ -9,6 +9,9 @@
         <% end %>
         <% if current_user %>
             <%= submit_tag 'Load page with saved feeds', class: 'btn btn-primary'%>
+            <% if !@submittags %>
+                <p>This will leave your existing choices unchanged.</p>
+            <% end %>
         <% else%>
             <%= submit_tag 'Load chosen feeds', class: 'btn btn-primary'%>
         <% end %>

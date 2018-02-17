@@ -8,22 +8,37 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <p id="loginStatus" class="navbar-text pull-right">
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary' %>  
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary'  %>
-      <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary'  %>  
-        <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary'  %>
-      <% end %>
-    </p>
+    <div id="applicationHTMLHeader" class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <div class="twitterFollowButton">
+          <a href="https://twitter.com/PMMWebDev" class="twitter-follow-button" data-show-count="false">Follow @PMMWebDev</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p id="loginStatus" class="navbar-text pull-right">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-primary' %>  
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-primary'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-primary'  %>  
+              <%= link_to "Login", new_user_session_path, :class => 'btn btn-primary'  %>
+            <% end %>
+          </p>
+      </div>
+    </div>
+  </div>
     <%= yield %>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
   </body>
+
 </html>

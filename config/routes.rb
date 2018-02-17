@@ -2,7 +2,9 @@
     devise_for :admin_users, ActiveAdmin::Devise.config
     ActiveAdmin.routes(self)
     root :to => 'home#index'
-    devise_for :users
+    devise_for :users do
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
     resources :preloadsources
     resources :sourcetypes
     resources :languages

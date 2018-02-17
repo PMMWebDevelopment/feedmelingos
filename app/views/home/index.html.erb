@@ -21,25 +21,31 @@
             </div>
         </div>
         <div class="row">
-            <div id="frontPageButtons" class="col-xs-offset-3 col-xs-3">
-                <span><button type="button" class="btn btn-lg btn-primary" onclick="borderFlash();">Try it out as guest</button></span>
+            <div id="frontPageButton" style="text-align: center">
+                <% if !current_user %>
+                    <button type="button" class="btn btn-lg btn-primary" onclick="borderFlash();">Try it out as a guest</button>
+                <% else %>
+                    <p id="memberClickPrompt">Click on one of the flags above to explore the language pages.</p>
+                <% end %>
             </div>
         </div>
     </div>
 
     <!-- End of Landing Page Setup -->
 
-    <!-- FOOTER -->
-    <!-- NB: always present! -->
-    <div class="footer">
-        <div class="container">
-            <p>&copy; PMM Web Development.</p>
-        </div>
-    </div>
-    <!-- End of Footer -->
+    
 
     <!-- EVENT SCRIPTS -->
 
     <!-- Site's own JavaScript file -->
+
+<!-- FOOTER -->
+    <!-- NB: always present! -->
+    <div class="footer">
+        <div class="container">
+            <p>Website design &copy; PMM Web Development. Live sources credited as used on site. This site is intended as a free educational aid.</p>
+        </div>
+    </div>
+<!-- End of Footer -->
 
 </body>

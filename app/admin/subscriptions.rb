@@ -2,7 +2,7 @@ ActiveAdmin.register Subscription do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :preloadsource_id, :language_id, :preloadsourcename, :preloadsourceurl
+permit_params :user_id, :preloadsource_id, :language_id, :preloadsourcename, :preloadsourceurl
 #
 # or
 #
