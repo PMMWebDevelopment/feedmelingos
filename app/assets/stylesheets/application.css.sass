@@ -1,6 +1,6 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
-@import url('https://fonts.googleapis.com/css?family=Montserrat')
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese')
 
 body 
     background: image-url('backgroundimageearth.jpg') center center fixed
@@ -9,6 +9,7 @@ body
 
 #applicationHTMLHeader
     margin: 5px
+    position: absolute
 
 #loginStatus
     padding-top: 0px
@@ -22,9 +23,10 @@ body
 
 #frontPage
     position: relative
+    top: 25px
+    margin: 0 auto
     color: white
     text-align: center
-    height: 550px
     
 #frontPageLogo img
     width: 100px
@@ -91,15 +93,23 @@ body
     margin-left: 5px
     margin-top: 0
     padding: 0
+    position: relative
+    top: 50px
 
 .languagePageFlags
     text-align: center
 
 .languagePageFlag
+    width: 30px
+    height: 20px
+
+.thisLanguageFlag
     width: 60px
     height: 40px
 
 #languageShowTopContainer
+    position: relative
+    top: 50px
     line-height: 40px
     height: 40px
 
@@ -123,6 +133,8 @@ body
     margin-bottom: 0
 
 #twitterRow
+    position: relative
+    top: 50px
     padding-left: 5px
     padding-top: 0
     margin-left: 5px
@@ -130,7 +142,7 @@ body
     margin-right: 10px 
     float: left
     text-align: left
-    max-height: 400px
+    max-height: 450px
     width: 95%
 
 .twitterfeeds
@@ -148,8 +160,9 @@ body
 
 .footer 
     position: relative
-    top: 5px
+    width: 95%
     bottom: 0px
+    margin: 0 auto
     color: white
     text-align: center
 

@@ -3,7 +3,7 @@
     <div class="col-md-2">
       <p id="backlink"><%= link_to 'Home', root_path %>
     </div>
-    <div class="col-md-6" id="languagePageFlags">
+    <div class="col-md-6" id="languagePageFlags"> Other languages: 
       <% @thisLanguage = Language.find(params[:id]) %>
       <% @otherLanguages = Language.where.not(id: @language. id)%>
       <% @otherLanguages.each do |language| %>
@@ -16,11 +16,11 @@
 
 <div id="languageShowTopContainer" class="container">
   <div class="row">
-    <div class="col-md-6" id="languageShowHeader">
-    <h1>FeedMeLingos::<b><%= @language.language %></b></h1>
+    <div class="col-md-7" id="languageShowHeader">
+    <h1>FeedMeLingos <span><%= image_tag("#{@thisLanguage.flagurl}", class: "thisLanguageFlag") %></span> <%= @language.language %></h1>
     </div>
       <!-- Button trigger modal -->
-    <div id="options" class="col-md-4">
+    <div id="options" class="col-md-5">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#changeFeedsModal">Review / change Twitter feeds on this page</button>
     </div>
   </div>
