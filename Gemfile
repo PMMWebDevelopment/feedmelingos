@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 # bootstrap for styling
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sprockets'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
