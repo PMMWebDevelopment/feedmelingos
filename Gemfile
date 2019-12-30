@@ -27,7 +27,7 @@ gem 'sass-rails', '~> 5.0'
 # bootstrap for styling
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sprockets'
+gem 'sprockets', '>= 3.7.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
