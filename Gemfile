@@ -11,11 +11,11 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', ">= 3.12.2"
 
 # User authentication
 gem 'activeadmin'
-gem 'devise'
+gem 'devise', ">= 4.7.1"
 
 # Restrict what resources users can change
 gem 'cancancan', '~> 2.0'
